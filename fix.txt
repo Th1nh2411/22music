@@ -1,0 +1,353 @@
+<body>
+	<!-- Preloader -->
+	<!-- <div class="preloader d-flex align-items-center justify-content-center">
+		<div class="lds-ellipsis">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div> -->
+
+	<!-- ##### Header Area Start ##### -->
+	<header class="header-area">
+		<!-- Navbar Area -->
+		<div id="sticky-wrapper" class="sticky-wrapper" style="height: 85px;"><div class="oneMusic-main-menu" style="">
+			<div class="classy-nav-container light left breakpoint-off">
+				<div class="container">
+					<!-- Menu -->
+					<nav class="classy-navbar justify-content-between" id="oneMusicNav">
+
+						<!-- Nav brand -->
+						<a href="index.htm" class="nav-brand">22MUSIC</a>
+
+						<!-- Navbar Toggler -->
+						<div class="classy-navbar-toggler">
+							<span class="navbarToggler"><span></span><span></span><span></span></span>
+						</div>
+
+						<!-- Menu -->
+						<div class="classy-menu">
+
+							<!-- Close Button -->
+							<div class="classycloseIcon">
+								<div class="cross-wrap">
+									<span class="top"></span><span class="bottom"></span>
+								</div>
+							</div>
+
+							<!-- Nav Start -->
+							<div class="classynav">
+								<ul>
+									<li><a href="index.htm">Trang Chủ</a></li>
+									
+									<li class="cn-dropdown-item has-down"><a href="#">Thể Loại<i></i></a>
+										<ul class="dropdown">
+											<li><a href="theloai.htm?Loai=NhacTre">Nhạc Trẻ</a></li>
+											<li><a href="theloai.htm?Loai=Bolero">Bolero</a></li>
+											<li><a href="theloai.htm?Loai=Rap">Rap</a></li>
+											<li><a href="theloai.htm?Loai=US-UK">Nhạc US-UK</a></li>
+											<li><a href="theloai.htm?Loai=NhacHoa">Nhạc Hoa</a></li>
+											<li><a href="theloai.htm?Loai=Latin">Nhạc Latin</a></li>
+											<li><a href="theloai.htm?Loai=Korean">Nhạc Hàn</a></li>
+											<li><a href="theloai.htm?Loai=Khac">Các Thể Loại
+													Khác</a></li>
+
+
+										</ul><span class="dd-trigger"></span></li>
+
+									<li class="cn-dropdown-item "><a href="#">Đề xuất</a>
+										<span class="dd-trigger"></span></li>
+									<li>
+										<form action="timkiem.htm">
+											 <input type="search" id="gsearch" name="name" value=""> 
+											 <button>Tìm</button>
+										</form>
+									</li>
+								</ul>
+
+								<!-- Login/Register & Cart Button -->
+								<div class="login-register-cart-button d-flex align-items-center">
+
+
+									
+										<!-- Login/Register -->
+										<div class="login-register-btn mr-20">
+											<a name="btnLogin" href="playlist.htm" id="loginBtn">PlayList</a> <span style="color: white; font-size: 18px"> /
+											</span> <a name="btnRegister" href="logout.htm" id="registerBtn">Đăng
+												Xuất</a>
+										</div>
+									
+										<!-- Login/Register -->
+										<div class="login-register-btn mr-20">
+											<a name="btnLogin" href="login.htm" id="loginBtn">Đăng
+												Nhập</a> <span style="color: white; font-size: 18px"> / </span>
+											<a name="btnRegister" href="register.htm" id="registerBtn">Đăng
+												Kí</a>
+										</div>
+									
+
+								</div>
+							</div>
+							<!-- Nav End -->
+
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div></div>
+	</header>
+	<!-- ##### Header Area End ##### -->
+
+	<!-- ##### Hero Area Start ##### -->
+	<section class="hero-area">
+		<div class="hero-slides owl-carousel owl-loaded owl-drag">
+			<!-- Single Hero Slide -->
+			
+
+			<!-- Single Hero Slide -->
+			
+		<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-2172px, 0px, 0px); transition: all 0s ease 0s; width: 6516px;"><div class="owl-item cloned" style="width: 1086px;"><div class="single-hero-slide d-flex align-items-center justify-content-center">
+				<!-- Slide Img -->
+				<div class="slide-img bg-img" style="background-image: url(img/bg-img/bg-1.jpg);"></div>
+				<!-- Slide Content -->
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="hero-slides-content text-center">
+								<h6 data-animation="fadeInUp" data-delay="100ms" style="animation-delay: 100ms; opacity: 1;" class="animated fadeInUp">Album mới
+									nhất</h6>
+								<h2 data-animation="fadeInUp" data-delay="300ms" style="animation-delay: 300ms; opacity: 1;" class="animated fadeInUp">
+									Beyond Time <span>Beyond Time</span>
+								</h2>
+								<a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50 animated fadeInUp" style="animation-delay: 500ms; opacity: 1;">Discover <i class="fa fa-angle-double-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div></div><div class="owl-item cloned" style="width: 1086px;"><div class="single-hero-slide d-flex align-items-center justify-content-center">
+				<!-- Slide Img -->
+				<div class="slide-img bg-img" style="background-image: url(img/bg-img/bg-2.jpg);"></div>
+				<!-- Slide Content -->
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="hero-slides-content text-center">
+								<h6 data-animation="fadeInUp" data-delay="100ms" style="animation-delay: 100ms; opacity: 0;" class="">Album mới
+									nhất</h6>
+								<h2 data-animation="fadeInUp" data-delay="300ms" style="animation-delay: 300ms; opacity: 0;" class="">
+									Colorlib Music <span>Colorlib Music</span>
+								</h2>
+								<a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50" style="animation-delay: 500ms; opacity: 0;">Discover <i class="fa fa-angle-double-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div></div><div class="owl-item active" style="width: 1086px;"><div class="single-hero-slide d-flex align-items-center justify-content-center">
+				<!-- Slide Img -->
+				<div class="slide-img bg-img" style="background-image: url(img/bg-img/bg-1.jpg);"></div>
+				<!-- Slide Content -->
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="hero-slides-content text-center">
+								<h6 data-animation="fadeInUp" data-delay="100ms" style="animation-delay: 100ms; opacity: 1;" class="animated fadeInUp">Album mới
+									nhất</h6>
+								<h2 data-animation="fadeInUp" data-delay="300ms" style="animation-delay: 300ms; opacity: 1;" class="animated fadeInUp">
+									Beyond Time <span>Beyond Time</span>
+								</h2>
+								<a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50 animated fadeInUp" style="animation-delay: 500ms; opacity: 1;">Discover <i class="fa fa-angle-double-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div></div><div class="owl-item" style="width: 1086px;"><div class="single-hero-slide d-flex align-items-center justify-content-center">
+				<!-- Slide Img -->
+				<div class="slide-img bg-img" style="background-image: url(img/bg-img/bg-2.jpg);"></div>
+				<!-- Slide Content -->
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="hero-slides-content text-center">
+								<h6 data-animation="fadeInUp" data-delay="100ms" style="animation-delay: 100ms; opacity: 0;" class="">Album mới
+									nhất</h6>
+								<h2 data-animation="fadeInUp" data-delay="300ms" style="animation-delay: 300ms; opacity: 0;" class="">
+									Colorlib Music <span>Colorlib Music</span>
+								</h2>
+								<a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50" style="animation-delay: 500ms; opacity: 0;">Discover <i class="fa fa-angle-double-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div></div><div class="owl-item cloned" style="width: 1086px;"><div class="single-hero-slide d-flex align-items-center justify-content-center">
+				<!-- Slide Img -->
+				<div class="slide-img bg-img" style="background-image: url(img/bg-img/bg-1.jpg);"></div>
+				<!-- Slide Content -->
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="hero-slides-content text-center">
+								<h6 data-animation="fadeInUp" data-delay="100ms" style="animation-delay: 100ms; opacity: 1;" class="animated fadeInUp">Album mới
+									nhất</h6>
+								<h2 data-animation="fadeInUp" data-delay="300ms" style="animation-delay: 300ms; opacity: 1;" class="animated fadeInUp">
+									Beyond Time <span>Beyond Time</span>
+								</h2>
+								<a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50 animated fadeInUp" style="animation-delay: 500ms; opacity: 1;">Discover <i class="fa fa-angle-double-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div></div><div class="owl-item cloned" style="width: 1086px;"><div class="single-hero-slide d-flex align-items-center justify-content-center">
+				<!-- Slide Img -->
+				<div class="slide-img bg-img" style="background-image: url(img/bg-img/bg-2.jpg);"></div>
+				<!-- Slide Content -->
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="hero-slides-content text-center">
+								<h6 data-animation="fadeInUp" data-delay="100ms" style="animation-delay: 100ms; opacity: 0;" class="">Album mới
+									nhất</h6>
+								<h2 data-animation="fadeInUp" data-delay="300ms" style="animation-delay: 300ms; opacity: 0;" class="">
+									Colorlib Music <span>Colorlib Music</span>
+								</h2>
+								<a data-animation="fadeInUp" data-delay="500ms" href="#" class="btn oneMusic-btn mt-50" style="animation-delay: 500ms; opacity: 0;">Discover <i class="fa fa-angle-double-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div></div></div></div><div class="owl-nav disabled"><div class="owl-prev">prev</div><div class="owl-next">next</div></div><div class="owl-dots disabled"></div></div>
+	</section>
+	<!-- ##### Hero Area End ##### -->
+
+	<!-- ##### Latest Albums Area Start ##### -->
+	
+	<!-- ##### Latest Albums Area End ##### -->
+
+	<!-- ##### Buy Now Area Start ##### -->
+	<section class="oneMusic-buy-now-area has-fluid bg-gray section-padding-100">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<div class="section-heading style-2">
+						<p>See what’s new</p>
+						<h2>Bài hát mới nhất</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+
+
+				
+
+
+			</div>
+
+
+		</div>
+
+
+
+	</section>
+	<!-- ##### Buy Now Area End ##### -->
+
+	<!-- ##### Featured Artist Area Start ##### -->
+	
+	<!-- ##### Featured Artist Area End ##### -->
+
+
+
+	<!-- ##### Contact Area Start ##### -->
+	<section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url(img/bg-img/bg-2.jpg);">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="section-heading white wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
+						<p>See what’s new</p>
+						<h2>Get In Touch</h2>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-12">
+					<!-- Contact Form Area -->
+					<div class="contact-form-area">
+						<form action="sendmail.htm" method="post">
+							<div class="row">
+								<div class="col-md-6 col-lg-4">
+									<div class="form-group wow fadeInUp" data-wow-delay="100ms" style="visibility: visible; animation-delay: 100ms; animation-name: fadeInUp;">
+										<input type="text" class="form-control" id="name" placeholder="Name" name="name">
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4">
+									<div class="form-group wow fadeInUp" data-wow-delay="200ms" style="visibility: visible; animation-delay: 200ms; animation-name: fadeInUp;">
+										<input type="email" class="form-control" id="email" placeholder="E-mail" name="email">
+									</div>
+								</div>
+								<div class="col-lg-4">
+									<div class="form-group wow fadeInUp" data-wow-delay="300ms" style="visibility: visible; animation-delay: 300ms; animation-name: fadeInUp;">
+										<input type="text" class="form-control" id="subject" placeholder="Subject" name="subject">
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="form-group wow fadeInUp" data-wow-delay="400ms" style="visibility: visible; animation-delay: 400ms; animation-name: fadeInUp;">
+										<textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+									</div>
+								</div>
+								<div class="col-12 text-center wow fadeInUp" data-wow-delay="500ms" style="visibility: visible; animation-delay: 500ms; animation-name: fadeInUp;">
+									<button class="btn oneMusic-btn mt-30" type="submit">
+										Send <i class="fa fa-angle-double-right"></i>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- ##### Contact Area End ##### -->
+
+	<!-- ##### Footer Area Start ##### -->
+	<footer class="footer-area">
+		<div class="container">
+			<div class="row d-flex flex-wrap align-items-center">
+				<div class="col-12 col-md-6">
+					<a href="#"><img src="img/core-img/logo.png" alt=""></a>
+					<p class="copywrite-text">
+						<a href="#"> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright ©<script>
+								document.write(new Date().getFullYear());
+							</script>2022 All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by </a><a href="https://www.facebook.com/liemlemlinh.nguyen" target="_blank">Thanh Liêm</a> <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+
+				<div class="col-12 col-md-6">
+					<div class="footer-nav">
+						<ul>
+							<li><a href="#">Trang Chủ</a></li>
+							<li><a href="#">Điều Khoảng</a></li>
+							<li><a href="#">Liên Lạc</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- ##### Footer Area Start ##### -->
+
+	<!-- ##### All Javascript Script ##### -->
+	<!-- jQuery-2.2.4 js -->
+	<script src="js/jquery/jquery-2.2.4.min.js"></script>
+	<!-- Popper js -->
+	<script src="js/bootstrap/popper.min.js"></script>
+	<!-- Bootstrap js -->
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+	<!-- All Plugins js -->
+	<script src="js/plugins/plugins.js"></script>
+	<!-- Active js -->
+	<script src="js/active.js"></script><a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: none;"><i class="fa fa-angle-up"></i></a>
+
+
+</body>
