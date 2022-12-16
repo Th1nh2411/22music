@@ -80,7 +80,7 @@
               		</a> --%>
 					<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-30 wow fadeInUp" data-wow-delay="100ms">
 					
-						<a href="Nhac/${recommendSongs.id}/0.htm" class="single-album-area " >
+						<a href="Nhac/${recommendSongs.id}/1.htm" class="single-album-area " >
 							<div class="album-thumb" style="background: url(${recommendSongs.image}) center /cover no-repeat"></div>
 							<div class="opacity"></div>
 							<div class="playbutton">

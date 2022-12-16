@@ -73,23 +73,35 @@ public class AdminController {
 			int a = historyToCsv("D:\\Eclipse\\eclipse-workspace\\22music\\src\\main\\webapp\\data.txt");
 			if (a==0) {
 				System.out.println("Khong ghi duoc file csv !!!");
+				model.addAttribute("message1", "Trung bình độ chính xác của hệ thống đề xuất bài hát với tất cả người dùng: "+getRecommend());
+				model.addAttribute("message2", "Ghi dữ liệu từ Sql vào file data để train thất b1ại!");
+				model.addAttribute("message3", "");
+				model.addAttribute("message4", "");
+				return "admin-views/viewthongminh";
 			}
-			User user = getUserByIdUser(1);
-			//List<History> history = getHistoryBySongAndUserId(1, 2);
-//			
-			//System.out.println(history.get(0).getId());
-			List<Song> list = getSongPre(user.getPred(), user);
 			
-			System.out.println("Day la check");
-			System.out.println(list.get(0).getId());
-			System.out.println(checkSong(1, 1));
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Co gi do da sai !!!");
-			return "admin";
+			model.addAttribute("message1", "Trung bình độ chính xác của hệ thống đề xuất bài hát với tất cả người dùng: "+getRecommend());
+			model.addAttribute("message2", "Ghi dữ liệu từ Sql vào file data để train thất b1ại!");
+			model.addAttribute("message3", "");
+			model.addAttribute("message4", "");
+			return "admin-views/viewthongminh";
 		}
-		return "admin";	
+		model.addAttribute("message1", "Trung bình độ chính xác của hệ thống đề xuất bài hát với tất cả người dùng: "+getRecommend());
+		model.addAttribute("message2", "Ghi dữ liệu từ Sql vào file data để train thành công!");
+		model.addAttribute("message3", "");
+		model.addAttribute("message4", "");
+		return "admin-views/viewthongminh";
 	
+	}
+	@RequestMapping(value = "/admin/thongminh.htm")
+	public String adminRecomIndex(ModelMap model) {
+		model.addAttribute("message1", "Trung bình độ chính xác của hệ thống đề xuất bài hát với tất cả người dùng: "+getRecommend());
+		model.addAttribute("message2", "");
+		model.addAttribute("message3", "");
+		model.addAttribute("message4", "");
+		return "admin-views/viewthongminh";
 	}
 	
 	@RequestMapping(value = "/admin/train.htm")
@@ -98,13 +110,27 @@ public class AdminController {
 			a = trainData();
 			if (a==0) {
 				System.out.println("Khong train duoc !!!");
+				model.addAttribute("message1", "Trung bình độ chính xác của hệ thống đề xuất bài hát với tất cả người dùng: "+getRecommend());
+				model.addAttribute("message2", "Ghi dữ liệu từ Sql vào file data để train thành công!");
+				model.addAttribute("message3", "Chạy file python train dữ liệu thất bại!");
+				model.addAttribute("message4", "");
+				return "admin-views/viewthongminh";
 			}
 			
-			return "admin";
+			
 		} catch (Exception e) {
 			// TODO: handle exception
-			return "admin";
+			model.addAttribute("message1", "Trung bình độ chính xác của hệ thống đề xuất bài hát với tất cả người dùng: "+getRecommend());
+			model.addAttribute("message2", "Ghi dữ liệu từ Sql vào file data để train thành công!");
+			model.addAttribute("message3", "Chạy file python train dữ liệu thất bại!");
+			model.addAttribute("message4", "");
+			return "admin-views/viewthongminh";
 		}
+		model.addAttribute("message1", "Trung bình độ chính xác của hệ thống đề xuất bài hát với tất cả người dùng: "+getRecommend());
+		model.addAttribute("message2", "Ghi dữ liệu từ Sql vào file data để train thành công!");
+		model.addAttribute("message3", "Train dữ liệu thành công!");
+		model.addAttribute("message4", "");
+		return "admin-views/viewthongminh";
 	}
 	@RequestMapping(value = "/admin/getPred.htm")
 	public String getPre(ModelMap model) {
@@ -115,13 +141,43 @@ public class AdminController {
 			}
 			a= getRatingUser();
 			if (a==0) {
-				System.out.println("Khong get du lieu user pred vao dc !!!");
+				model.addAttribute("message1", "Trung bình độ chính xác của hệ thống đề xuất bài hát với tất cả người dùng: "+getRecommend());
+				model.addAttribute("message2", "Ghi dữ liệu từ Sql vào file data để train thành công!");
+				model.addAttribute("message3", "Train dữ liệu thành công!");
+				model.addAttribute("message4", "Lấy dữ liệu từ file dự đoán vào sql thất bại!");
+				return "admin-views/viewthongminh";
+				//System.out.println("Khong get du lieu user pred vao dc !!!");
 			}
-			return "admin";
+			
 		} catch (Exception e) {
-			// TODO: handle exception
-			return "admin";
+			model.addAttribute("message1", "Trung bình độ chính xác của hệ thống đề xuất bài hát với tất cả người dùng: "+getRecommend());
+			model.addAttribute("message2", "Ghi dữ liệu từ Sql vào file data để train thành công!");
+			model.addAttribute("message3", "Train dữ liệu thành công!");
+			model.addAttribute("message4", "Lấy dữ liệu từ file dự đoán vào sql thất bại!");
+			return "admin-views/viewthongminh";
 		}
+		model.addAttribute("message1", "Trung bình độ chính xác của hệ thống đề xuất bài hát với tất cả người dùng: "+getRecommend());
+		model.addAttribute("message2", "Ghi dữ liệu từ Sql vào file data để train thành công!");
+		model.addAttribute("message3", "Train dữ liệu thành công!");
+		model.addAttribute("message4", "Lấy dữ liệu từ file dự đoán vào sql thành công!");
+		return "admin-views/viewthongminh";
+	}
+	
+	public double getRecommend() {
+		double a = 0;
+		double b = 0;
+		List<History> histories = getHistory();
+		for (History history : histories) {
+			if(history.getIsPre()==1) {
+				if(history.getRating()==1) {
+					a +=1;
+				}
+				b +=1;
+			}
+			
+		}
+		
+		return (a/b)*100;
 	}
 	
 	public List<Song> getSongs() {
@@ -223,6 +279,15 @@ public class AdminController {
 		
 		return list;
 	}
+	public List<History> getHistoryUnique() {
+		Session session = factory.getCurrentSession();
+		String hqlString = "FROM History";
+		Query query = session.createQuery(hqlString);
+		List<History> list = query.list();
+		
+		
+		return list;
+	}
 	public List<History> getHistoryByUserId(String id) {
 		Session session = factory.getCurrentSession();
 		String hqlString = "FROM History WHERE user.id='"+id+"'";
@@ -281,11 +346,8 @@ public class AdminController {
 			// TODO: handle exception
 			System.out.println("Co loi trong qua trinh ghi file history to CSV !!!");
 			return 0;
-		} finally {
-			
-			return 1;
 		}
-		
+		return 1;
 	}
 	public static List<String> parseCsvLine(String csvLine) {
         List<String> result = new ArrayList<String>();

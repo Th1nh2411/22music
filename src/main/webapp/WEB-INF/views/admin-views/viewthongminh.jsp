@@ -168,22 +168,21 @@ ${message}
                                     <table class="table user-table">
                                         <tr>
                                                <th>
-                                               ${messaage1}
-                                               thông báo 1
+                                               ${message1}%.
                                                </th>
                                                </tr>
                                         
                                             <tr>                                          
-                                            <th><a type="button" class="btn btn-secondary" href="">Precision</a></th>
-                                            <th> ${message2} thông báo thành công hoặc thất bại</th>                                           
+                                            <th><a type="button" class="btn btn-secondary" href="admin/admin.htm">Đổ dữ liệu vào txt</a></th>
+                                            <th> ${message2}</th>                                           
                                                </tr>
                                                <tr>
-                                                <th><a type="button" class="btn btn-secondary" href="">Accuracy</a></th>
-                                                <th> ${message3} thông báo thành công hoặc thất bại</th>
+                                                <th><a type="button" class="btn btn-secondary" href="admin/train.htm">Train data</a></th>
+                                                <th> ${message3}</th>
                                                </tr>  
                                                <tr>
-                                               <th><a type="button" class="btn btn-secondary" href="">Recall</a></th>
-                                               <th> ${message4} thông báo thành công hoặc thất bại</th>
+                                               <th><a type="button" class="btn btn-secondary" href="admin/getPred.htm">Lấy dữ liệu dự đoán</a></th>
+                                               <th> ${message4}</th>
                                                </tr>                                                                                           
                                     </table>
                                 </div>                            
