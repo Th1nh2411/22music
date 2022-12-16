@@ -84,7 +84,7 @@ public class LoginController {
 		return "register";
 	}
 	@RequestMapping(value = "register", method = RequestMethod.POST)
-	public String thembaihat(ModelMap model, HttpServletRequest request,@ModelAttribute("user") User user) {
+	public String dangki(ModelMap model, HttpServletRequest request,@ModelAttribute("user") User user, HttpSession ss) {
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		
@@ -120,6 +120,9 @@ public class LoginController {
 			session.close();
 		}
 		int test = addAccount(taiKhoan);
+		taiKhoan = this.getDangNhap(taiKhoan.getName(), taiKhoan.getPass());
+
+		ss.setAttribute("DangNhap", taiKhoan);
 		model.addAttribute("accountName", taiKhoan.getUser().getName());
 		if (test ==0) {
 			System.out.print("that bai tao account");

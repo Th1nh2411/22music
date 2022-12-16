@@ -1,7 +1,9 @@
 /* [Master Stylesheet - v1.0] */
 /* :: 1.0 Import Fonts */
 
-@import url("https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400i,500,500i,600,600i,700,700i");
+/* @import url("https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400i,500,500i,600,600i,700,700i"); */
+
+
 /* :: 2.0 Import All CSS */
 @import url(css/bootstrap.min.css);
 @import url(css/classy-nav.css);
@@ -20,6 +22,10 @@ input:-webkit-autofill:active {
 }
 #gsearch:-webkit-autofill{
      -webkit-text-fill-color: #fff !important;
+}
+@font-face {
+   font-family: "Archivo Narrow";
+   src: url(fonts/ArchivoNarrow-VariableFont_wght.ttf);
 }
 * {
   margin: 0;

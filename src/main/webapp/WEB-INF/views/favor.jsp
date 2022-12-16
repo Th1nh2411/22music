@@ -57,12 +57,14 @@
 							<h2>Bài hát bạn yêu thích</h2>
 							<p>22Music sẽ mang đến cho bạn những bài hát mới nhất trên
 							khắp thế giới trong từng giây.</p>
+							
 						</div>
 					</div>
 						
-			<div class="list-song row">
+			
 
 			<c:if test="${blank == false}">
+			<div class="list-song row">
 				<c:forEach var="userFavor" items="${userFavor}">
 					<!-- Single Album Area -->
 					<div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-30 wow fadeInUp" data-wow-delay="100ms">
@@ -82,11 +84,13 @@
 						
 					</div>
 				</c:forEach>
+				</div>
 			</c:if>
 			<c:if test="${blank == true}">
-				<p>Bạn chưa thêm bài hát yêu thích nào </p>
-			</c:if>
-			</div>
+								<p class="text-center mt-10">Bạn chưa thêm bài hát yêu thích nào </p>
+							</c:if>
+			
+			
 						
 					
 				</div>

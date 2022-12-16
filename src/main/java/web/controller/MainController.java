@@ -329,6 +329,46 @@ public class MainController {
 			account = (Account) ss.getAttribute("DangNhap");
 			System.out.print("That bai2");
 			List<Song> userFavor = getListSongHistoryByUserIdWithRate1(account.getUser().getId());
+			System.out.print(userFavor);
+			model.addAttribute("blank", false);
+			model.addAttribute("userFavor", userFavor);
+			if (userFavor.isEmpty()) {
+				model.addAttribute("blank", true);
+			}
+		} catch (Exception e) {
+			
+		}
+		
+		return "favor";
+	}
+	@RequestMapping( value = "/favor/{id}/{num}/{isPre}.htm")
+	public String getFavor1(ModelMap model, HttpSession ss, @PathVariable("id") int idS, @PathVariable("num") int num, @PathVariable("isPre") int isPre) {
+		Account account = new Account();
+		try {
+			account = (Account) ss.getAttribute("DangNhap");
+			int rate =0;
+			if(num>30) {
+				rate = 1;
+			}
+			
+			History history = new History();
+			history.setIsPre(isPre);
+			history.setSong(getSongByIdSong(idS));
+			history.setRating(rate);
+			history.setUser(account.getUser());
+			int check = addHistory(history);
+			System.out.print(account.getId());
+			model.addAttribute("accountName", account.getUser().getName());
+			model.addAttribute("isLogin", true);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.print("That bai");
+			model.addAttribute("isLogin", false);
+		}
+		try {
+			account = (Account) ss.getAttribute("DangNhap");
+			System.out.print("That bai2");
+			List<Song> userFavor = getListSongHistoryByUserIdWithRate1(account.getUser().getId());
 			System.out.print("That bai1");
 			model.addAttribute("blank", false);
 			model.addAttribute("userFavor", userFavor);

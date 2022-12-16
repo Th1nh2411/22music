@@ -88,7 +88,7 @@
 										</li>
 									</c:if>
 									<li class = "search-nav">
-										<form action="search.htm">
+										<form id="search" action="search/">
 											 <input type="search" id="gsearch" name="timkiem" value = "" > 
 											 <button><i class="fa fa-search"></i></button>
 										</form>
@@ -193,7 +193,7 @@
 				<div class="col-0 col-md-5 col-lg-5">
 					<div class="suggest-container">
 						
-						<div class="suggest-title">Dành cho bạn</div>
+						<div class="suggest-title">Mọi người cũng nghe</div>
 						<c:forEach var="suggestSongs" items="${suggestSongs}">
 							<a class="song-item" href="Nhac/${suggestSongs.id}/1/" >
 		               		<div class="song-info ">
@@ -238,6 +238,8 @@
     	const logoHref = $(".brand").href;
     	const homeHref = $("#home").href;
     	const recommendHref = $("#recommend").href;
+    	const favorHref = $("#favor").href;
+    	const searchHref = $("#search").action;
     	const tagHrefs = $$(".dropdown a");
     	const songHrefs = $$(".song-item");
     	const favorNumAddHref = "${songById.id}/"+40+"/${isPre}.htm";
@@ -253,48 +255,60 @@
     	
     	
     	
+    	//Set giá trị ban đầu cho href 1 item
     	
+    	//Nếu bài hát này đã được yêu thích
     	if (isFavor){
     		favorIconActive.hidden = false;
 			favorIcon.hidden = true;
 			$(".brand").href = logoHref + favorNumAddHref;
 			$("#home").href = homeHref + favorNumAddHref;
 	    	$("#recommend").href = recommendHref + favorNumAddHref;
+	    	$("#favor").href = favorHref + favorNumAddHref;
+	    	$("#search").action = searchHref + favorNumAddHref;
 	    	Array.from(tagHrefs).forEach(function(item){
-				item.href = defautTagHref + favorNumAddHref;
-				
-			});
-	    	Array.from(songHrefs).forEach(function(item){
-				item.href = defautSongHref + favorNumAddHref;
-				
-			});
-    	}
-    	
-    	//Set giá trị ban đầu cho href 1 item
-    	else{
-    		$(".brand").href = logoHref + "${songById.id}/"+0+"/${isPre}.htm";
-    		$("#home").href = homeHref + "${songById.id}/"+0+"/${isPre}.htm";
-        	$("#recommend").href = recommendHref + "${songById.id}/"+0+"/${isPre}.htm";
-        	//Set giá trị ban đầu cho list các taghrefs
-        	Array.from(tagHrefs).forEach(function(item){
         		defautTagHref = item.href;
-    			item.href = defautTagHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+    			item.href = defautTagHref + favorNumAddHref;
     			
     		});
         	//Set giá trị ban đầu cho songs list href
         	Array.from(songHrefs).forEach(function(item){
         		defautSongHref = item.href;
-    			item.href = defautSongHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+    			item.href = defautSongHref + favorNumAddHref;
     			
     		});
+	    	
     	}
-		//Set vòng lặp sau 1 giây thì seconds tăng 1 và gán nó vào href
+    	
+    	//Nếu bài hát này chưa được yêu thích
+    	else{
+    		$(".brand").href = logoHref + "${songById.id}/"+0+"/${isPre}.htm";
+    		$("#home").href = homeHref + "${songById.id}/"+0+"/${isPre}.htm";
+        	$("#recommend").href = recommendHref + "${songById.id}/"+0+"/${isPre}.htm";
+        	$("#favor").href = favorHref + "${songById.id}/"+0+"/${isPre}.htm";
+        	$("#search").action = searchHref + "${songById.id}/"+0+"/${isPre}.htm";
+        	Array.from(tagHrefs).forEach(function(item){
+        		defautTagHref = item.href;
+				item.href = defautTagHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+				
+			});
+	    	Array.from(songHrefs).forEach(function(item){
+	    		defautSongHref = item.href;
+				item.href = defautSongHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+				
+			});
+        	//Set giá trị ban đầu cho list các taghrefs
+        	
+    	}
+		
 		function switchStatusFavor(){
     		
     		if (!isFavor){
     			$(".brand").href = logoHref + favorNumAddHref;
     			$("#home").href = homeHref + favorNumAddHref;
     	    	$("#recommend").href = recommendHref + favorNumAddHref;
+    	    	$("#favor").href = favorHref + favorNumAddHref;
+    	    	$("#search").action = searchHref + favorNumAddHref;
     	    	Array.from(tagHrefs).forEach(function(item){
     				item.href = defautTagHref + favorNumAddHref;
     				
@@ -308,15 +322,26 @@
     			favorIcon.hidden = true;
     		} 
     		else {
-    			$(".brand").href = logoHref + "${songById.id}/"+ seconds +"/${isPre}.htm";
-    			$("#home").href = homeHref + "${songById.id}/"+	seconds +"/${isPre}.htm";
-    	    	$("#recommend").href = recommendHref + "${songById.id}/"+ seconds +"/${isPre}.htm";
+    			$(".brand").href = logoHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+    			$("#home").href = homeHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+    	    	$("#recommend").href = recommendHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+    	    	$("#favor").href = favorHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+    	    	$("#search").action = searchHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+    	    	Array.from(tagHrefs).forEach(function(item){
+    				item.href = defautTagHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+    				
+    			});
+    	    	Array.from(songHrefs).forEach(function(item){
+    				item.href = defautSongHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+    				
+    			});
     	    	isUpdateHref = true;
     			favorIconActive.hidden = true;
     			favorIcon.hidden = false;
     		}
     		isFavor = !isFavor;
     	}
+		//Set vòng lặp sau 1 giây thì seconds tăng 1 và gán nó vào href
     	setInterval(function() {
         	if(isPlay){
             	seconds++;
@@ -329,13 +354,20 @@
 	        		
 	        		const updateRecommendHref = recommendHref + "${songById.id}/"+seconds+"/${isPre}.htm";
 	        		$("#recommend").href = updateRecommendHref;
+	        		
+	        		const updateFavorHref = favorHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+	        		$("#favor").href = updateFavorHref;
+	        		
+	        		const updateSearchHref = searchHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+	        		$("#search").action = updateSearchHref;
+
             	}
         	}
         		
         }, 1000 );
     	
 		
-    	//Duyệt từng phần từ và et vòng lặp sau 1 giây thì gán seconds đã tăng ở trên vào các href
+    	//Duyệt từng phần từ href sau 1 giây thì gán seconds đã tăng ở trên vào các href
 		Array.from(songHrefs).forEach(function(item){
 			
 			setInterval(function() {
@@ -348,7 +380,7 @@
 		});
     	
 		
-    	//Duyệt từng phần từ và et vòng lặp sau 1 giây thì gán seconds đã tăng ở trên vào các href
+		//Duyệt từng phần từ href sau 1 giây thì gán seconds đã tăng ở trên vào các href
 		Array.from(tagHrefs).forEach(function(item){
 			
 			setInterval(function() {
@@ -379,7 +411,7 @@
         function cdPlay() {
         	cdAnimate.play();
         	isPlay = true;
-        	if (isFavor == false){
+        	if (!isFavor){
         		isUpdateHref = true;
         	}
           };
