@@ -50,6 +50,10 @@
 										<li><a id="favor" href="favor.htm">Yêu thích</a>
 										</li>
 									</c:if>
+									<c:if test="${isLogin == false}">
+										<li><a id="favor" href="login.htm">Yêu thích</a>
+										</li>
+									</c:if>
 									<li class = "search-nav">
 										<form action="search.htm">
 											 <input type="search" id="gsearch" name="timkiem" value = "" > 

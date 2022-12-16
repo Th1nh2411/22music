@@ -150,6 +150,7 @@ public class MainController {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
+			model.addAttribute("isFavor", 0);
 			model.addAttribute("isLogin", false);
 		}
 		
@@ -171,7 +172,7 @@ public class MainController {
 		
 		try {
 			Account account = (Account) ss.getAttribute("DangNhap");
-			System.out.print(account.getId());
+			
 			int rate =0;
 			if(num>30) {
 				rate = 1;
@@ -185,6 +186,7 @@ public class MainController {
 			try {
 				History historyNew = getHistoryBySongAndUserId(idNew, account.getId()).get(getHistoryBySongAndUserId(idNew, account.getId()).size()-1);
 				model.addAttribute("isFavor", historyNew.getRating());
+				System.out.print(historyNew.getRating());
 			}
 			catch(Exception e) {
 				model.addAttribute("isFavor", 0);
@@ -192,6 +194,7 @@ public class MainController {
 			model.addAttribute("isLogin", true);
 			model.addAttribute("accountName", account.getUser().getName());
 		} catch (Exception e) {
+			model.addAttribute("isFavor", 0);
 			model.addAttribute("isLogin", false);
 		}
 		

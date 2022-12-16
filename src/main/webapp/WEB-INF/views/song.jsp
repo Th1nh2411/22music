@@ -87,6 +87,10 @@
 										<li><a id="favor" href="favor/">Yêu thích</a>
 										</li>
 									</c:if>
+									<c:if test="${isLogin == false}">
+										<li><a id="favor" href="login.htm">Yêu thích</a>
+										</li>
+									</c:if>
 									<li class = "search-nav">
 										<form id="search" action="search/">
 											 <input type="search" id="gsearch" name="timkiem" value = "" > 
@@ -151,7 +155,16 @@
 							<p>${songById.songName}</p>
 						</div>
 						<div class="featured-artist-thumb" style="background: url(${songById.image}) left center /cover no-repeat;"></div>
-						
+						<div class="song-options">
+							<div onclick="switchStatusRepeat()" class="song-repeat">
+								<i class="fa fa-rotate-right"></i>
+								<div class="button-title">Lặp lại</div>
+							</div>
+							<div onclick="switchStatusAutoForward()" class="song-autoforward active" >
+								<i class="fa fa-step-forward"></i>
+								<div class="button-title">Tự động phát</div>
+							</div>
+						</div>
 						<audio    onpause="cdPause()" onplay="cdPlay()" id="audio" preload="auto" controls="true">
 							<source src="${songById.audio}">
 						</audio>
@@ -159,14 +172,25 @@
 							
 								<div onclick="switchStatusFavor()" class="favor-song">
 									<i class="fa fa-heart-o"></i>
-									<div class="favor-title">Yêu thích</div>
+									<div class="button-title">Yêu thích</div>
 								</div>
 							
 							
 								<div onclick="switchStatusFavor()" hidden class="favor-song--active">
 									<i class="fa fa-heart"></i>
-									<div class="favor-title">Bỏ yêu thích</div>
+									<div class="button-title">Bỏ yêu thích</div>
 								</div>	
+							
+						</c:if>
+						<c:if test="${isLogin == false}">
+							
+								<a href="login.htm">
+									<div onclick="switchStatusFavor()" class="favor-song">
+										<i class="fa fa-heart-o"></i>
+										<div class="button-title">Yêu thích</div>
+									</div>
+
+								</a>	
 							
 						</c:if>
 						
@@ -264,7 +288,10 @@
 			$(".brand").href = logoHref + favorNumAddHref;
 			$("#home").href = homeHref + favorNumAddHref;
 	    	$("#recommend").href = recommendHref + favorNumAddHref;
-	    	$("#favor").href = favorHref + favorNumAddHref;
+	    	<c:if test="${isLogin == true}">
+	    		$("#favor").href = favorHref + favorNumAddHref;
+			</c:if>
+	    	
 	    	$("#search").action = searchHref + favorNumAddHref;
 	    	Array.from(tagHrefs).forEach(function(item){
         		defautTagHref = item.href;
@@ -285,7 +312,10 @@
     		$(".brand").href = logoHref + "${songById.id}/"+0+"/${isPre}.htm";
     		$("#home").href = homeHref + "${songById.id}/"+0+"/${isPre}.htm";
         	$("#recommend").href = recommendHref + "${songById.id}/"+0+"/${isPre}.htm";
-        	$("#favor").href = favorHref + "${songById.id}/"+0+"/${isPre}.htm";
+        	<c:if test="${isLogin == true}">
+        		$("#favor").href = favorHref + "${songById.id}/"+0+"/${isPre}.htm";
+			</c:if>
+        	
         	$("#search").action = searchHref + "${songById.id}/"+0+"/${isPre}.htm";
         	Array.from(tagHrefs).forEach(function(item){
         		defautTagHref = item.href;
@@ -307,7 +337,10 @@
     			$(".brand").href = logoHref + favorNumAddHref;
     			$("#home").href = homeHref + favorNumAddHref;
     	    	$("#recommend").href = recommendHref + favorNumAddHref;
-    	    	$("#favor").href = favorHref + favorNumAddHref;
+    	    	<c:if test="${isLogin == true}">
+    	    		$("#favor").href = favorHref + favorNumAddHref;
+				</c:if>
+    	    	
     	    	$("#search").action = searchHref + favorNumAddHref;
     	    	Array.from(tagHrefs).forEach(function(item){
     				item.href = defautTagHref + favorNumAddHref;
@@ -325,7 +358,10 @@
     			$(".brand").href = logoHref + "${songById.id}/"+seconds+"/${isPre}.htm";
     			$("#home").href = homeHref + "${songById.id}/"+seconds+"/${isPre}.htm";
     	    	$("#recommend").href = recommendHref + "${songById.id}/"+seconds+"/${isPre}.htm";
-    	    	$("#favor").href = favorHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+    	    	<c:if test="${isLogin == true}">
+    	    		$("#favor").href = favorHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+				</c:if>
+    	    	
     	    	$("#search").action = searchHref + "${songById.id}/"+seconds+"/${isPre}.htm";
     	    	Array.from(tagHrefs).forEach(function(item){
     				item.href = defautTagHref + "${songById.id}/"+seconds+"/${isPre}.htm";
@@ -354,9 +390,11 @@
 	        		
 	        		const updateRecommendHref = recommendHref + "${songById.id}/"+seconds+"/${isPre}.htm";
 	        		$("#recommend").href = updateRecommendHref;
+	        		<c:if test="${isLogin == true}">
+	        			const updateFavorHref = favorHref + "${songById.id}/"+seconds+"/${isPre}.htm";
+	        			$("#favor").href = updateFavorHref;
+					</c:if>
 	        		
-	        		const updateFavorHref = favorHref + "${songById.id}/"+seconds+"/${isPre}.htm";
-	        		$("#favor").href = updateFavorHref;
 	        		
 	        		const updateSearchHref = searchHref + "${songById.id}/"+seconds+"/${isPre}.htm";
 	        		$("#search").action = updateSearchHref;
@@ -421,6 +459,26 @@
             
             isPlay = false;
           }; 
+        songAudio.play();//set nhạc bật mỗi khi vào trang
+        const repeatBtn = $(".song-repeat");
+        const AutoBtn = $(".song-autoforward");
+        var isAuto = true;
+        var isRepeat = false;
+       	function switchStatusAutoForward(){
+       		isAuto = !isAuto;
+       		AutoBtn.classList.toggle("active", isAuto);
+       	}
+       	function switchStatusRepeat(){
+       		isRepeat = !isRepeat;
+       		repeatBtn.classList.toggle("active", isRepeat);
+       	}
+       	songAudio.onended = function(){
+       		if (isRepeat) {
+                songAudio.play();
+            }else if (isAuto){
+            	songHrefs[1].click();
+            }
+       	}
     </script>
     <!-- jQuery-2.2.4 js -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
