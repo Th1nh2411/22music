@@ -13,7 +13,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>One Music - Modern Music HTML5 Template</title>
+    <title>Đăng nhập | 22Music</title>
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -48,14 +48,14 @@
                         
                         <!-- Login Form -->
                      
-                            <form:form action="action.htm" modelAttribute="account">
+                            <form:form id="login-form" action="action.htm" modelAttribute="account">
                             <div class="form-group">
                             	<label for="username">Tên đăng
 													nhập</label>
                                     <form:input path="name" type="text"
 														class="form-control" id="username"
 														placeholder="Nhập tên đăng nhập" />
-													
+									<div class="form-message"></div>				
                                     
                                 </div>
                                 <div class="form-group">
@@ -63,7 +63,7 @@
                                 <form:input path="pass" type="password"
 														class="form-control" id="userpassword"
 														placeholder="Nhập mật khẩu" />
-                                   
+                                   <div class="form-message"></div>
                                 </div>
                                 <div class="error-message">${message}</div>
                                 <div class="form-group">
@@ -96,6 +96,22 @@
     <!-- ##### Footer Area Start ##### -->
 
     <!-- ##### All Javascript Script ##### -->
+    <script src="js/validator.js"></script>
+    <!-- ##### All Javascript Script ##### -->
+    <script>
+	    const loginValidate = new Validator({
+	      form: '#login-form',
+	      formGroupSelector: '.form-group',
+	      errorSelector: '.form-message',
+	      rules: [
+	        
+	        Validator.isRequired('#username', "Vui lòng nhập tên đăng nhập"),
+	        Validator.isRequired('#userpassword', "Vui lòng nhập mật khẩu"),
+	       
+	      ],
+	    })
+	    loginValidate.main();
+    </script>
     <!-- jQuery-2.2.4 js -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
