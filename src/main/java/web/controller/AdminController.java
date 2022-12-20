@@ -42,14 +42,14 @@ public class AdminController {
 
 	private static final String COMMA_DELIMITER = ",";
 	private static final String NEW_LINE_SEPARATOR = "\n";
-	private static final String GETRATING_STRING = "D:/Eclipse/eclipse-workspace/22music/src/main/webapp/getRatingUser.py";
+	private static final String GETRATING_STRING = "D:/WorkSpace/NgheNhac/22music/src/main/webapp/getRatingUser.py";
 
-	private static final String GETSONGSIM_STRING = "D:/Eclipse/eclipse-workspace/22music/src/main/webapp/getSongSim.py";
+	private static final String GETSONGSIM_STRING = "D:/WorkSpace/NgheNhac/22music/src/main/webapp/getSongSim.py";
 
-	private static final String PREMAXTRIXPY_STRING = "D:/Eclipse/eclipse-workspace/22music/src/main/webapp/userPredMatrix.py";
-	private static final String fileData = "D:/Eclipse/eclipse-workspace/22music/src/main/webapp/data.txt";
-	private static final String fileUserPred = "D:/Eclipse/eclipse-workspace/22music/src/main/webapp/PredUser.txt";
-	private static final String fileSongSim = "D:/Eclipse/eclipse-workspace/22music/src/main/webapp/PredSong.txt";
+	private static final String PREMAXTRIXPY_STRING = "D:/WorkSpace/NgheNhac/22music/src/main/webapp/userPredMatrix.py";
+	private static final String fileData = "D:/WorkSpace/NgheNhac/22music/src/main/webapp/data.txt";
+	private static final String fileUserPred = "D:/WorkSpace/NgheNhac/22music/src/main/webapp/PredUser.txt";
+	private static final String fileSongSim = "D:/WorkSpace/NgheNhac/22music/src/main/webapp/PredSong.txt";
 	
 	@Autowired
 	SessionFactory factory;

@@ -274,6 +274,7 @@ public class MainController {
 			System.out.print(account.getId());
 			
 			model.addAttribute("isLogin", true);
+			model.addAttribute("accountName", account.getUser().getName());
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.print("That bai");
@@ -290,7 +291,6 @@ public class MainController {
 
 		try {
 			Account account = (Account) ss.getAttribute("DangNhap");
-			System.out.print(account.getId());
 			int rate =0;
 			if(num>30) {
 				rate = 1;

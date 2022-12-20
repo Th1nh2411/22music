@@ -46,6 +46,8 @@ public class LoginController {
 		// Chưa truyền attribute index
 		ss.setAttribute("DangNhap",null);
 		model.addAttribute("isLogin", false);
+		List<Song> newSongs = getRandom6NewSongs();
+		model.addAttribute("newsongs", newSongs);
 		return "index";
 	}
 	@RequestMapping(value = "action", method = RequestMethod.POST)

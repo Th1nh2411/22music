@@ -125,7 +125,7 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-8 align-self-center">
-                        <h3 class="page-title mb-0 p-0">Thông số đánh giá</h3>
+                        <h3 class="page-title mb-0 p-0">Train thông minh</h3>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -157,13 +157,13 @@
                         <div class="card">
                             <div class="card-body">
                                 <div style="
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-">
-    <h4 class="card-title">Đánh giá</h4>
-</div>
-${message}                 
+								    display: flex;
+								    justify-content: space-between;
+								    align-items: center;
+								">
+								    <h4 class="card-title">Đánh giá</h4>
+								</div>
+								${message}                 
                                 <div class="table-responsive">
                                     <table class="table user-table">
                                         <tr>
@@ -173,17 +173,42 @@ ${message}
                                                </tr>
                                         
                                             <tr>                                          
+                                                                                                                               
+                                    </table>
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <div style="
+								    display: flex;
+								    justify-content: space-between;
+								    align-items: center;
+								">
+								    <h4 class="card-title">Train</h4>
+								</div>
+								${message}                 
+                                <div class="table-responsive">
+                                    <table class="table user-table">
+                                        
+                                        
+                                            <tr>                                          
                                             <th><a type="button" class="btn btn-secondary" href="admin/admin.htm">Đổ dữ liệu vào txt</a></th>
+                                            
                                             <th> ${message2}</th>                                           
                                                </tr>
-                                               <tr>
-                                                <th><a type="button" class="btn btn-secondary" href="admin/train.htm">Train data</a></th>
-                                                <th> ${message3}</th>
-                                               </tr>  
-                                               <tr>
-                                               <th><a type="button" class="btn btn-secondary" href="admin/getPred.htm">Lấy dữ liệu dự đoán</a></th>
-                                               <th> ${message4}</th>
-                                               </tr>                                                                                           
+                                               <c:if test="${isStep1 == 0}">
+	                                               <tr>
+	                                                <th><a type="button" class="btn btn-secondary" href="admin/train.htm">Train data</a></th>
+	                                                <th> ${message3}</th>
+	                                               </tr>
+                                               </c:if>
+                                               <c:if test="${isStep2 == 0}">  
+	                                               <tr>
+	                                               <th><a type="button" class="btn btn-secondary" href="admin/getPred.htm">Lấy dữ liệu dự đoán</a></th>
+	                                               <th> ${message4}</th>
+	                                               </tr>   
+                                               </c:if>                                                                                        
                                     </table>
                                 </div>                            
                             </div>

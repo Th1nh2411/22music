@@ -165,7 +165,7 @@
 								<div class="button-title">Tự động phát</div>
 							</div>
 						</div>
-						<audio    onpause="cdPause()" onplay="cdPlay()" id="audio" preload="auto" controls="true">
+						<audio    onpause="cdPause()" onplay="cdPlay()" id="audio" preload="auto" controls="true" >
 							<source src="${songById.audio}">
 						</audio>
 						<c:if test="${isLogin == true}">
@@ -259,6 +259,7 @@
     	
     	const cd = $(".featured-artist-thumb");
     	const songAudio = $("#audio");
+    	
     	const logoHref = $(".brand").href;
     	const homeHref = $("#home").href;
     	const recommendHref = $("#recommend").href;
@@ -459,7 +460,10 @@
             
             isPlay = false;
           }; 
-        songAudio.play();//set nhạc bật mỗi khi vào trang
+         window.onload = function() {
+        	 songAudio.play();//set nhạc bật mỗi khi vào trang
+       	}
+        
         const repeatBtn = $(".song-repeat");
         const AutoBtn = $(".song-autoforward");
         var isAuto = true;
@@ -477,6 +481,7 @@
                 songAudio.play();
             }else if (isAuto){
             	songHrefs[1].click();
+            	
             }
        	}
     </script>
